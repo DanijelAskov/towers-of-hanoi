@@ -55,6 +55,8 @@ import javafx.util.StringConverter;
 public class GamePane extends BorderPane {
     
     private enum DemonstrationState { NOT_RUNNING, RUNNING, PAUSED, FINISHED }
+
+    private static final String PATH_PREFIX = "playercontrols/";
     
     public static final double WIDTH = 1000;
     public static final double HEIGHT = 600;
@@ -75,9 +77,9 @@ public class GamePane extends BorderPane {
     private static final double SLIDER_ANIMATION_SPEED_MAX = 1;
     private static final double SLIDER_ANIMATION_SPEED_DEFAULT = 0;
     private static final int FPS = 60;
-    private static final ImageView IMAGE_VIEW_PLAY = new ImageView(new Image("askov/schoolprojects/cg/towersofhanoi/resources/playercontrols/play.png"));
-    private static final ImageView IMAGE_VIEW_PAUSE = new ImageView(new Image("askov/schoolprojects/cg/towersofhanoi/resources/playercontrols/pause.png"));
-    private static final ImageView IMAGE_VIEW_STOP = new ImageView(new Image("askov/schoolprojects/cg/towersofhanoi/resources/playercontrols/stop.png"));
+    private static final ImageView IMAGE_VIEW_PLAY = new ImageView(new Image(Thread.currentThread().getContextClassLoader().getResource(PATH_PREFIX + "play.png").toString()));
+    private static final ImageView IMAGE_VIEW_PAUSE = new ImageView(new Image(Thread.currentThread().getContextClassLoader().getResource(PATH_PREFIX + "pause.png").toString()));
+    private static final ImageView IMAGE_VIEW_STOP = new ImageView(new Image(Thread.currentThread().getContextClassLoader().getResource(PATH_PREFIX + "stop.png").toString()));
     private static final double MIN_SPECULAR_POWER = 0;
     private static final double MAX_SPECULAR_POWER = 150;
     private static final double DEFAULT_SPECULAR_POWER = 32;

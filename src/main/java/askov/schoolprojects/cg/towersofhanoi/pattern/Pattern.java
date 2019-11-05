@@ -21,39 +21,41 @@ public class Pattern {
     private static final PhongMaterial DEFAULT_SELECTED_MATERIAL = new PhongMaterial(Color.web("0x0093C4"));
     private static final PhongMaterial DEFAULT_SELECTABLE_MATERIAL = new PhongMaterial(Color.GREEN);
     private static final PhongMaterial DEFAULT_UNSELECTABLE_MATERIAL = new PhongMaterial(Color.RED);
+
+    private static final String PATH_PREFIX = "maps/";
     
     static {
         PhongMaterial hammeredMetalMaterial = new PhongMaterial();
-        hammeredMetalMaterial.setDiffuseMap(new Image("askov/schoolprojects/cg/towersofhanoi/resources/maps/hammeredmetal/diff.jpg"));
-        hammeredMetalMaterial.setBumpMap(new Image("askov/schoolprojects/cg/towersofhanoi/resources/maps/hammeredmetal/bump.jpg"));
-        hammeredMetalMaterial.setSpecularMap(new Image("askov/schoolprojects/cg/towersofhanoi/resources/maps/hammeredmetal/spec.jpg"));
+        hammeredMetalMaterial.setDiffuseMap(new Image(Thread.currentThread().getContextClassLoader().getResource(PATH_PREFIX + "hammeredmetal/diff.jpg").toString()));
+        hammeredMetalMaterial.setBumpMap(new Image(Thread.currentThread().getContextClassLoader().getResource(PATH_PREFIX + "hammeredmetal/bump.jpg").toString()));
+        hammeredMetalMaterial.setSpecularMap(new Image(PATH_PREFIX + "hammeredmetal/spec.jpg"));
         HAMMERED_METAL = new Pattern(hammeredMetalMaterial, "Hammered Metal");
         
         PhongMaterial metalMaterial = new PhongMaterial();
-        metalMaterial.setDiffuseMap(new Image("askov/schoolprojects/cg/towersofhanoi/resources/maps/galvanizedmetal/diff.jpg"));
-        metalMaterial.setBumpMap(new Image("askov/schoolprojects/cg/towersofhanoi/resources/maps/galvanizedmetal/bump.jpg"));
-        metalMaterial.setSpecularMap(new Image("askov/schoolprojects/cg/towersofhanoi/resources/maps/galvanizedmetal/spec.jpg"));
+        metalMaterial.setDiffuseMap(new Image(Thread.currentThread().getContextClassLoader().getResource(PATH_PREFIX + "galvanizedmetal/diff.jpg").toString()));
+        metalMaterial.setBumpMap(new Image(Thread.currentThread().getContextClassLoader().getResource(PATH_PREFIX + "galvanizedmetal/bump.jpg").toString()));
+        metalMaterial.setSpecularMap(new Image(Thread.currentThread().getContextClassLoader().getResource(PATH_PREFIX + "galvanizedmetal/spec.jpg").toString()));
         GALVANIZED_METAL = new Pattern(metalMaterial, "Galvanized Metal");
         
         PhongMaterial stoneMaterial = new PhongMaterial();
-        stoneMaterial.setDiffuseMap(new Image("askov/schoolprojects/cg/towersofhanoi/resources/maps/stone/diff.jpg"));
-        stoneMaterial.setBumpMap(new Image("askov/schoolprojects/cg/towersofhanoi/resources/maps/stone/bump.jpg"));
-        stoneMaterial.setSpecularMap(new Image("askov/schoolprojects/cg/towersofhanoi/resources/maps/stone/spec.jpg"));
+        stoneMaterial.setDiffuseMap(new Image(Thread.currentThread().getContextClassLoader().getResource(PATH_PREFIX + "stone/diff.jpg").toString()));
+        stoneMaterial.setBumpMap(new Image(Thread.currentThread().getContextClassLoader().getResource(PATH_PREFIX + "stone/bump.jpg").toString()));
+        stoneMaterial.setSpecularMap(new Image(Thread.currentThread().getContextClassLoader().getResource(PATH_PREFIX + "stone/spec.jpg").toString()));
         STONE = new Pattern(stoneMaterial, "Stone");
         
         PhongMaterial plasticMaterial = new PhongMaterial();
-        plasticMaterial.setDiffuseMap(new Image("askov/schoolprojects/cg/towersofhanoi/resources/maps/plastic/diff.jpg"));
+        plasticMaterial.setDiffuseMap(new Image(Thread.currentThread().getContextClassLoader().getResource(PATH_PREFIX + "plastic/diff.jpg").toString()));
         PLASTIC = new Pattern(plasticMaterial, "Plastic");
         
         PhongMaterial woodMaterial = new PhongMaterial();
-        woodMaterial.setDiffuseMap(new Image("askov/schoolprojects/cg/towersofhanoi/resources/maps/wood/diff.jpg"));
-        woodMaterial.setBumpMap(new Image("askov/schoolprojects/cg/towersofhanoi/resources/maps/wood/bump.jpg"));
+        woodMaterial.setDiffuseMap(new Image(Thread.currentThread().getContextClassLoader().getResource(PATH_PREFIX + "wood/diff.jpg").toString()));
+        woodMaterial.setBumpMap(new Image(Thread.currentThread().getContextClassLoader().getResource(PATH_PREFIX + "wood/bump.jpg").toString()));
         WOOD = new Pattern(woodMaterial, "Wood");
         
         PhongMaterial concreteMaterial = new PhongMaterial();
-        concreteMaterial.setDiffuseMap(new Image("askov/schoolprojects/cg/towersofhanoi/resources/maps/bluemarble/diff.jpg"));
-        concreteMaterial.setBumpMap(new Image("askov/schoolprojects/cg/towersofhanoi/resources/maps/bluemarble/bump.jpg"));
-        concreteMaterial.setSpecularMap(new Image("askov/schoolprojects/cg/towersofhanoi/resources/maps/bluemarble/spec.jpg"));
+        concreteMaterial.setDiffuseMap(new Image(Thread.currentThread().getContextClassLoader().getResource(PATH_PREFIX + "bluemarble/diff.jpg").toString()));
+        concreteMaterial.setBumpMap(new Image(Thread.currentThread().getContextClassLoader().getResource(PATH_PREFIX + "bluemarble/bump.jpg").toString()));
+        concreteMaterial.setSpecularMap(new Image(Thread.currentThread().getContextClassLoader().getResource(PATH_PREFIX + "bluemarble/spec.jpg").toString()));
         BLUE_MARBLE = new Pattern(concreteMaterial, "Blue Marble");
     }
     

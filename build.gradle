@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+}
+
+group 'askov.schoolprojects.cg.towersofhanoi'
+version '1.0'
+
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = sourceCompatibility
+
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClassName = 'askov.schoolprojects.cg.towersofhanoi.TowersOfHanoi'
+}
+
+javafx {
+    version = JavaVersion.VERSION_11
+    modules = ['javafx.controls', 'javafx.media']
+}
