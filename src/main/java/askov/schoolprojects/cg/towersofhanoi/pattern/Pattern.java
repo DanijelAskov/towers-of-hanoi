@@ -28,7 +28,7 @@ public class Pattern {
         PhongMaterial hammeredMetalMaterial = new PhongMaterial();
         hammeredMetalMaterial.setDiffuseMap(new Image(Thread.currentThread().getContextClassLoader().getResource(PATH_PREFIX + "hammeredmetal/diff.jpg").toString()));
         hammeredMetalMaterial.setBumpMap(new Image(Thread.currentThread().getContextClassLoader().getResource(PATH_PREFIX + "hammeredmetal/bump.jpg").toString()));
-        hammeredMetalMaterial.setSpecularMap(new Image(PATH_PREFIX + "hammeredmetal/spec.jpg"));
+        hammeredMetalMaterial.setSpecularMap(new Image(Thread.currentThread().getContextClassLoader().getResource(PATH_PREFIX + "hammeredmetal/spec.jpg").toString()));
         HAMMERED_METAL = new Pattern(hammeredMetalMaterial, "Hammered Metal");
         
         PhongMaterial metalMaterial = new PhongMaterial();
