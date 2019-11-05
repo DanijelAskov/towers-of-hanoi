@@ -6,9 +6,10 @@
 
 An interactive 3D JavaFX application which visualizes the process of solving the *Towers of Hanoi* puzzle.
 
-## Tools used for development
+## Setup
 
-This application was developed using IntelliJ IDEA (Community Edition) IDE.
+This project uses [Gradle](https://docs.gradle.org/current/userguide/userguide.html).
+Open command-line interpreter and simply run `gradlew run` (Windows) or `./gradlew run` (macOS and Linux) to download the Gradle wrapper and dependencies, compile the code, and launch the application.
 
 ## Features
 
