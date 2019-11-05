@@ -9,7 +9,7 @@ An interactive 3D JavaFX application which visualizes the process of solving the
 ## Setup
 
 This project uses [Gradle](https://docs.gradle.org/current/userguide/userguide.html).
-Open command-line interpreter and simply run `gradlew run` (Windows) or `./gradlew run` (macOS and Linux) to download the Gradle wrapper and dependencies, compile the code, and launch the application.
+Open command-line interpreter and simply run `gradlew run` (Windows) or `./gradlew run` (macOS and Linux) to launch the application.
 
 ## Features
 
