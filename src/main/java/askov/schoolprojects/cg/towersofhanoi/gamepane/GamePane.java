@@ -603,7 +603,7 @@ public class GamePane extends BorderPane {
             labelMoves.setText(String.format("Moves: %5d", 0));
             progressBar.setProgress(ProgressBar.INDETERMINATE_PROGRESS);
 
-            puzzle.setInteractionEnabled(true);
+            puzzle.setInteractionEnabled(false);
             demonstrationState = DemonstrationState.NOT_RUNNING;
         });
         
