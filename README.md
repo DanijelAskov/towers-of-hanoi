@@ -37,5 +37,4 @@ Diffuse, normal (bump) and specularity maps which were used in this project can 
 ## Note to the reader of this README
 
 If you have any question, suggestion or collaboration offer, please feel free to [contact me](mailto:danijel.askov@gmail.com).
-
-
+**If you find this repository useful, please consider starring it!**
