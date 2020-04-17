@@ -20,6 +20,7 @@ package askov.schoolprojects.cg.towersofhanoi.puzzle;
 
 import askov.schoolprojects.cg.towersofhanoi.pattern.Pattern;
 import askov.schoolprojects.cg.towersofhanoi.shapes.CoaxialCylinder;
+import javafx.scene.Cursor;
 
 /**
  *
@@ -40,8 +41,10 @@ public class Disk extends CoaxialCylinder {
                     if (!selected) {
                         setMaterial(pattern.getSelectableMaterial());
                     }
+                    setCursor(Cursor.HAND);
                 } else {
                     setMaterial(pattern.getUnselectableMaterial());
+                    setCursor(Cursor.DEFAULT);
                 }
             }
         });
@@ -53,6 +56,7 @@ public class Disk extends CoaxialCylinder {
                     setMaterial(pattern.getSelectedMaterial());
                 }
             }
+            setCursor(Cursor.DEFAULT);
         });
     }
     

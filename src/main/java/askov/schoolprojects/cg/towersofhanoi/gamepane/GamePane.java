@@ -243,7 +243,7 @@ public class GamePane extends BorderPane {
         sliderSpecularPower.setMinorTickCount(0);
         sliderSpecularPower.setShowTickMarks(true);
         sliderSpecularPower.setShowTickLabels(true);
-        sliderSpecularPower.setLabelFormatter(new StringConverter<Double>() {
+        sliderSpecularPower.setLabelFormatter(new StringConverter<>() {
             
             @Override
             public String toString(Double value) {

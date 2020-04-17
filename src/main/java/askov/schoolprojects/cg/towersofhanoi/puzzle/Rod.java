@@ -22,6 +22,8 @@ package askov.schoolprojects.cg.towersofhanoi.puzzle;
 import askov.schoolprojects.cg.towersofhanoi.pattern.Pattern;
 import java.util.EmptyStackException;
 import java.util.Stack;
+
+import javafx.scene.Cursor;
 import javafx.scene.shape.Cylinder;
 
 /**
@@ -45,8 +47,10 @@ public class Rod extends Cylinder {
                     if (!selected) {
                         setMaterial(pattern.getSelectableMaterial());
                     }
+                    setCursor(Cursor.HAND);
                 } else {
                     setMaterial(pattern.getUnselectableMaterial());
+                    setCursor(Cursor.DEFAULT);
                 }
             }
         });
@@ -58,6 +62,7 @@ public class Rod extends Cylinder {
                     setMaterial(pattern.getSelectedMaterial());
                 }
             }
+            setCursor(Cursor.DEFAULT);
         });
     }
     
