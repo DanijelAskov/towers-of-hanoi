@@ -1,5 +1,8 @@
 # TowersOfHanoi
 
+[![CodeFactor](https://www.codefactor.io/repository/github/danijelaskov/towers-of-hanoi/badge)](https://www.codefactor.io/repository/github/danijelaskov/towers-of-hanoi)
+![Build with Gradle](https://github.com/DanijelAskov/towers-of-hanoi/actions/workflows/gradle.yml/badge.svg)
+
 ![Gameplay demonstration](demo/gameplay.gif)
 
 ## Short application description
@@ -28,7 +31,7 @@ Two solving modes are available:
   Animation speed can be fine-tuned.
   Animation can be paused and stopped.
 
-No matter what mode of interaction is chosen, it is always possible to position the camera around the puzzle board by mouse dragging, and to control the distance between camera and the puzzle (i. e. zoom in/zoom out) by mouse scrolling.
+No matter what mode of interaction is chosen, it is always possible to position the camera around the puzzle board by mouse dragging, and to control the distance between camera and the puzzle (i.e. zoom in/zoom out) by mouse scrolling.
 
 ## Maps
 

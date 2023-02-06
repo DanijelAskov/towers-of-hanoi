@@ -63,8 +63,8 @@ public abstract class DiskRelocator {
         currentRelocationIndex++;
         if (currentRelocationIndex < diskRelocations.length) {
             DiskRelocation currentMove = diskRelocations[currentRelocationIndex];
-            Disk disk = currentMove.getDisk();
-            Rod destRod = currentMove.getDestRod();
+            Disk disk = currentMove.disk();
+            Rod destRod = currentMove.destRod();
             
             disk.setSelected(true);
             destRod.setSelected(true);
@@ -104,8 +104,8 @@ public abstract class DiskRelocator {
     
     public final void stop() {
         currentAnimation.stop();
-        diskRelocations[currentRelocationIndex].getDisk().setSelected(false);
-        diskRelocations[currentRelocationIndex].getDestRod().setSelected(false);
+        diskRelocations[currentRelocationIndex].disk().setSelected(false);
+        diskRelocations[currentRelocationIndex].destRod().setSelected(false);
         currentRelocationIndex = 0;
     }
     

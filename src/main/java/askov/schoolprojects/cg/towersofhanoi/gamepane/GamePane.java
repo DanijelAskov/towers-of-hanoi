@@ -51,12 +51,8 @@ import javafx.scene.control.TitledPane;
 import javafx.scene.control.ToolBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.RowConstraints;
-import javafx.scene.paint.Color;
+import javafx.scene.layout.*;
+import javafx.scene.paint.*;
 import javafx.scene.text.Font;
 import javafx.scene.transform.Rotate;
 import javafx.scene.transform.Translate;
@@ -259,14 +255,11 @@ public class GamePane extends BorderPane {
 
             @Override
             public Double fromString(String string) {
-                switch (string) {
-                    case "Low":
-                        return MIN_SPECULAR_POWER;
-                    case "Fast":
-                        return MAX_SPECULAR_POWER;
-                    default:
-                        return (MAX_SPECULAR_POWER - MIN_SPECULAR_POWER) / 2;
-                }
+                return switch (string) {
+                    case "Low" -> MIN_SPECULAR_POWER;
+                    case "Fast" -> MAX_SPECULAR_POWER;
+                    default -> (MAX_SPECULAR_POWER - MIN_SPECULAR_POWER) / 2;
+                };
             }
             
         });
@@ -310,14 +303,13 @@ public class GamePane extends BorderPane {
         sliderLightPositionX.setMinorTickCount(0);
         sliderLightPositionX.setShowTickMarks(true);
         sliderLightPositionX.setShowTickLabels(true);
-        sliderLightPositionX.setLabelFormatter(new StringConverter<Double>() {
-            
+        sliderLightPositionX.setLabelFormatter(new StringConverter<>() {
+
             @Override
             public String toString(Double value) {
                 if (value == MIN_ANGLE_X) {
                     return "Front";
-                }
-                else if (value == MIN_ANGLE_X + (MAX_ANGLE_X - MIN_ANGLE_X) / 2) {
+                } else if (value == MIN_ANGLE_X + (MAX_ANGLE_X - MIN_ANGLE_X) / 2) {
                     return "Above";
                 } else {
                     return "Back";
@@ -326,18 +318,14 @@ public class GamePane extends BorderPane {
 
             @Override
             public Double fromString(String string) {
-                switch (string) {
-                    case "Front":
-                        return MIN_ANGLE_X;
-                    case "Above":
-                        return MIN_ANGLE_X + (MAX_ANGLE_X - MIN_ANGLE_X) / 2;
-                    case "Back":
-                        return MAX_ANGLE_X;
-                    default:
-                        return (MAX_ANGLE_X - MIN_ANGLE_X) / 2;
-                }
+                return switch (string) {
+                    case "Front" -> MIN_ANGLE_X;
+                    case "Above" -> MIN_ANGLE_X + (MAX_ANGLE_X - MIN_ANGLE_X) / 2;
+                    case "Back" -> MAX_ANGLE_X;
+                    default -> (MAX_ANGLE_X - MIN_ANGLE_X) / 2;
+                };
             }
-            
+
         });
         sliderLightPositionX.valueProperty().addListener((ChangeListener) (arg0, arg1, arg2) -> lightRotateAroundXAxis.setAngle(MIN_ANGLE_X - sliderLightPositionX.getValue()));
         
@@ -348,14 +336,13 @@ public class GamePane extends BorderPane {
         sliderLightPositionY.setMinorTickCount(0);
         sliderLightPositionY.setShowTickMarks(true);
         sliderLightPositionY.setShowTickLabels(true);
-        sliderLightPositionY.setLabelFormatter(new StringConverter<Double>() {
-            
+        sliderLightPositionY.setLabelFormatter(new StringConverter<>() {
+
             @Override
             public String toString(Double value) {
                 if (value == MIN_ANGLE_Y) {
                     return "Left";
-                }
-                else if (value == MIN_ANGLE_Y + (MAX_ANGLE_Y - MIN_ANGLE_Y) / 2) {
+                } else if (value == MIN_ANGLE_Y + (MAX_ANGLE_Y - MIN_ANGLE_Y) / 2) {
                     return "Center";
                 } else {
                     return "Right";
@@ -364,18 +351,14 @@ public class GamePane extends BorderPane {
 
             @Override
             public Double fromString(String string) {
-                switch (string) {
-                    case "Left":
-                        return MIN_ANGLE_Y;
-                    case "Center":
-                        return MIN_ANGLE_Y + (MAX_ANGLE_Y - MIN_ANGLE_Y) / 2;
-                    case "Right":
-                        return MAX_ANGLE_Y;
-                    default:
-                        return (MAX_ANGLE_Y - MIN_ANGLE_Y) / 2;
-                }
+                return switch (string) {
+                    case "Left" -> MIN_ANGLE_Y;
+                    case "Center" -> MIN_ANGLE_Y + (MAX_ANGLE_Y - MIN_ANGLE_Y) / 2;
+                    case "Right" -> MAX_ANGLE_Y;
+                    default -> (MAX_ANGLE_Y - MIN_ANGLE_Y) / 2;
+                };
             }
-            
+
         });
         sliderLightPositionY.valueProperty().addListener((ChangeListener) (arg0, arg1, arg2) -> lightRotateAroundYAxis.setAngle(-sliderLightPositionY.getValue()));
         
@@ -472,14 +455,13 @@ public class GamePane extends BorderPane {
         gridPaneSpeed.add(sliderSpeed, 0, 1);
         GridPane.setHalignment(sliderSpeed, HPos.CENTER);
         sliderSpeed.setMaxWidth(0.20 * WIDTH);
-        sliderSpeed.setLabelFormatter(new StringConverter<Double>() {
-            
+        sliderSpeed.setLabelFormatter(new StringConverter<>() {
+
             @Override
             public String toString(Double value) {
                 if (value == SLIDER_ANIMATION_SPEED_MIN) {
                     return "Slow";
-                }
-                else if (value == SLIDER_ANIMATION_SPEED_DEFAULT) {
+                } else if (value == SLIDER_ANIMATION_SPEED_DEFAULT) {
                     return "Normal";
                 } else {
                     return "Fast";
@@ -488,16 +470,13 @@ public class GamePane extends BorderPane {
 
             @Override
             public Double fromString(String string) {
-                switch (string) {
-                    case "Slow":
-                        return SLIDER_ANIMATION_SPEED_MIN;
-                    case "Fast":
-                        return 1d;
-                    default:
-                        return SLIDER_ANIMATION_SPEED_DEFAULT;
-                }
+                return switch (string) {
+                    case "Slow" -> SLIDER_ANIMATION_SPEED_MIN;
+                    case "Fast" -> 1d;
+                    default -> SLIDER_ANIMATION_SPEED_DEFAULT;
+                };
             }
-            
+
         });
         sliderSpeed.setMinorTickCount(0);
         sliderSpeed.setMajorTickUnit(1);
@@ -525,10 +504,9 @@ public class GamePane extends BorderPane {
         buttonPlayPause.setGraphic(IMAGE_VIEW_PLAY);
         buttonPlayPause.setOnAction(e -> {
             switch (demonstrationState) {
-                case FINISHED: case NOT_RUNNING:
+                case FINISHED, NOT_RUNNING -> {
                     puzzle.reset();
                     puzzleSolver.solve();
-
                     diskRelocator = new DiskFlipper(puzzle, puzzleSolver.getDiskRelocations());
                     double sliderValue = sliderSpeed.getValue();
                     if (sliderValue >= 0) {
@@ -548,37 +526,26 @@ public class GamePane extends BorderPane {
 
                         demonstrationState = DemonstrationState.FINISHED;
                     });
-
                     buttonPlayPause.setGraphic(IMAGE_VIEW_PAUSE);
                     buttonStop.setDisable(false);
                     buttonStartSolving.setDisable(true);
                     gridPaneNumOfDisks.setDisable(true);
-
                     timerOn = true;
                     time = 0;
-
                     demonstrationState = DemonstrationState.RUNNING;
-                    break;
-
-                case RUNNING:
+                }
+                case RUNNING -> {
                     diskRelocator.pause();
-
                     buttonPlayPause.setGraphic(IMAGE_VIEW_PLAY);
-
                     timerOn = false;
-
                     demonstrationState = DemonstrationState.PAUSED;
-                    break;
-
-                case PAUSED:
+                }
+                case PAUSED -> {
                     diskRelocator.resume();
-
                     buttonPlayPause.setGraphic(IMAGE_VIEW_PAUSE);
-
                     timerOn = true;
-
                     demonstrationState = DemonstrationState.RUNNING;
-                    break;
+                }
             }
         });
         

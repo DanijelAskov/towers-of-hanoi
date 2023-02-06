@@ -81,8 +81,7 @@ public class Puzzle extends Group {
                 return;
             }
             PickResult pickResult = event.getPickResult();
-            if (pickResult != null && pickResult.getIntersectedNode() instanceof Shape3D) {
-                Shape3D shape = (Shape3D)pickResult.getIntersectedNode();
+            if (pickResult != null && pickResult.getIntersectedNode() instanceof Shape3D shape) {
                 if (shape instanceof Disk) {
                     if (!((Disk)shape).isSelectable()) {
                         return;
@@ -95,8 +94,7 @@ public class Puzzle extends Group {
                         selectedDisk = (Disk)shape;
                         selectedDisk.setSelected(true);
                     }
-                } else if (shape instanceof Rod) {
-                    Rod rod = (Rod)shape;
+                } else if (shape instanceof Rod rod) {
                     if (selectedDisk != null) {
                         if (selectedDisk.getRod() == rod) {
                             return;

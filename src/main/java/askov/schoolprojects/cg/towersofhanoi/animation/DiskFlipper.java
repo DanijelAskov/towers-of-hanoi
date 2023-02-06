@@ -48,8 +48,8 @@ public class DiskFlipper extends DiskRelocator {
 
     @Override
     protected Animation getDiskRelocationAnimation(DiskRelocation diskRelocation, Action doAfterEachRelocation) {
-        Disk disk = diskRelocation.getDisk();
-        Rod destRod = diskRelocation.getDestRod();
+        Disk disk = diskRelocation.disk();
+        Rod destRod = diskRelocation.destRod();
         
         Disk destRodTopDisk = destRod.peek();
         double destRodTopDiskTranslateY = destRodTopDisk == null ? 0.5 * disk.getBoundsInParent().getHeight() : destRodTopDisk.getTranslateY();
